@@ -107,3 +107,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+/* Cadastrar Vacinas */
+document.addEventListener('DOMContentLoaded', function() {
+    const formCadastrarVacinas = document.getElementById('formCadastrarVacinas');
+
+    if (formCadastrarVacinas) {
+        formCadastrarVacinas.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const vacinasSelecionadas = [];
+            // Pega todos os checkboxes com o nome 'vacinasTomadas'
+            const checkboxes = document.querySelectorAll('input[name="vacinasTomadas"]:checked');
+
+            checkboxes.forEach(checkbox => {
+                vacinasSelecionadas.push(checkbox.value); // Adiciona o valor (nome da vacina) ao array
+            });
+
+            // Recupera o usuário logado (se houver) para associar as vacinas
+            let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+
+            if (usuarioLogado) {
+                // Adiciona as vacinas selecionadas ao objeto do usuário
+                usuarioLogado.vacinasTomadas = vacinasSelecionadas;
+
+                // Atualiza o usuário no localStorage de usuários (todos os usuários)
+                let todosUsuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+                todosUsuarios = todosUsuarios.map(user => {
+                    if (user.id === usuarioLogado.id) { // Assumindo que o ID é único
+                        return usuarioLogado; // Retorna o usuário atualizado
+                    }
+                    return user; // Retorna os outros usuários sem alteração
+                });
+                localStorage.setItem('usuarios', JSON.stringify(todosUsuarios));
+
+                // Atualiza também o 'usuarioLogado' para manter a sessão consistente
+                localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogado));
+
+                alert('Vacinas cadastradas com sucesso!');
+                window.location.href = 'telaPrincipal.html'; // Redireciona de volta para o painel
+            } else {
+                alert('Nenhum usuário logado. Por favor, faça login.');
+                window.location.href = 'login.html'; // Redireciona para login se não houver usuário logado
+            }
+        });
+    }
+});
