@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificações</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="notificacao.css">
+</head>
+<body>
+    <!-- Cabeçalho com título centralizado -->
+    <header class="notificacao-header">
+        <h1>Notificações</h1>
+    </header>
+    <!-- Formulário de preferências de notificação -->
+    <form class="form-notificacao">
+        <!-- Campo de telefone -->
+        <div class="form-group">
+            <label for="telefone">Telefone (WhatsApp ou SMS)</label>
+            <input type="text" id="telefone" name="telefone" placeholder="(99) 99999-9999">
+        </div>
+        <!-- Campo de e-mail -->
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com">
+        </div>
+        <!-- Opções de notificação -->
+        <div class="form-group">
+            <span>Escolha como deseja ser notificado:</span>
+            <div class="notificacao-opcoes">
+                <label><input type="checkbox" name="opcao" value="whatsapp"> WhatsApp</label>
+                <label><input type="checkbox" name="opcao" value="sms"> SMS</label>
+                <label><input type="checkbox" name="opcao" value="email"> E-mail</label>
+            </div>
+        </div>
+        <!-- Declaração de privacidade -->
+        <div class="privacidade">
+            Suas informações serão utilizadas apenas para envio de notificações relacionadas à sua carteira de vacinação. Em conformidade com a Lei Geral de Proteção de Dados (LGPD), garantimos a privacidade e segurança dos seus dados.
+        </div>
+        <!-- Botão de ação -->
+        <button type="submit" class="btn-salvar">Salvar Preferências de Notificações</button>
+    </form>
+</body>
+</html>

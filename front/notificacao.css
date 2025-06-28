@@ -1,0 +1,112 @@
+/*
+  Estilos para a tela de Notificações
+  - Fundo branco
+  - Elementos centralizados e espaçados
+  - Botão verde com texto branco
+*/
+
+body {
+    background: #fff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notificacao-header {
+    width: 100%;
+    padding: 32px 0 16px 0;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.notificacao-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #222;
+}
+
+.form-notificacao {
+    width: 100%;
+    max-width: 400px;
+    margin: 32px auto 0 auto;
+    background: #fff;
+    padding: 32px 24px 24px 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 1rem;
+    color: #444;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.form-group input:focus {
+    border: 1.5px solid #4CAF50;
+}
+
+.notificacao-opcoes {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.notificacao-opcoes label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.privacidade {
+    font-size: 0.95rem;
+    color: #666;
+    background: #f7f7f7;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 8px;
+}
+
+.btn-salvar {
+    margin-top: 18px;
+    width: 100%;
+    padding: 12px 0;
+    background: #4CAF50;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-salvar:hover {
+    background: #388e3c;
+}
