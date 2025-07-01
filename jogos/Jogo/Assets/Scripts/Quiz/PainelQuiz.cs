@@ -11,6 +11,9 @@ public class PainelQuiz : MonoBehaviour
     [SerializeField]
     private Pergunta pergunta;
 
+    [SerializeField]
+    private Pontuacao pontuacao;
+
     private Alternativa[] alternativaBotoes;
 
     public bool PerguntaRespondida { get; private set; }
@@ -54,6 +57,13 @@ public class PainelQuiz : MonoBehaviour
                 alternativa.ativarCores();
             }
             alternativaEscolhida.adicionarContorno();
+
+            if (alternativaEscolhida.alternativaCorreta) {
+                pontuacao?.Pontuar(10);
+            }
+            else {
+                //diminuir chances
+            }
         }
 
         PerguntaRespondida = true;
