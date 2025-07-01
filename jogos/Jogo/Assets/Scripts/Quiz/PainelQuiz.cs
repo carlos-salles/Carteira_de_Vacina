@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PainelQuiz : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI textoEnunciado;
+    [SerializeField]
+    private TextMeshProUGUI textoChances;
+    [SerializeField]
+    private Button botaoAvancar;
 
     [SerializeField]
     private Pergunta pergunta;
@@ -17,9 +22,11 @@ public class PainelQuiz : MonoBehaviour
     private Alternativa[] alternativaBotoes;
 
     public bool PerguntaRespondida { get; private set; }
+    public int tentativasRestantes { get; private set; }
 
     void Awake()
     {
+        tentativasRestantes = 3;
         alternativaBotoes = GetComponentsInChildren<Alternativa>();
 
     }
@@ -62,7 +69,11 @@ public class PainelQuiz : MonoBehaviour
                 pontuacao?.Pontuar(10);
             }
             else {
-                //diminuir chances
+                tentativasRestantes -= 1;
+                textoChances.text = "Tentativas restantes: " + tentativasRestantes;
+            }
+            if (botaoAvancar != null) {
+                botaoAvancar.interactable = true;   
             }
         }
 

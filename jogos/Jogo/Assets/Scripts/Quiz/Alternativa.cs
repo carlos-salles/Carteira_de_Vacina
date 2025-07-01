@@ -31,7 +31,7 @@ public class Alternativa : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetAlternativa(resposta, alternativaCorreta);
+        
     }
 
     // Update is called once per frame
