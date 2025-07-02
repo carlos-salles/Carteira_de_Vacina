@@ -33,7 +33,7 @@ public class PainelQuiz : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CarregarPergunta(pergunta);
+        
     }
 
     // Update is called once per frame

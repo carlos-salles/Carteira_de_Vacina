@@ -211,9 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ec729e91c7d9736a486cfb29ec1878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perguntas:
-  - {fileID: 11400000, guid: 60d8c1948096ceb82b5709eaf4b9a35e, type: 2}
-  - {fileID: 11400000, guid: b554de66ded3368c6843177bf875aa8e, type: 2}
+  perguntas: []
   perguntaAtualIndice: 0
   painelQuiz: {fileID: 1786275724}
   botaoAvancar: {fileID: 2103319441}
